@@ -2,6 +2,16 @@
 A React UI app built to address daily boredom. Filter and search through categories for your personal activities! 
 Built with the Bored API
 
+# Team Members 
+Pragati Rathore  https://github.com/pragatipdx  
+Reeya Kumbhojkar  
+Sai Priyanka  https://github.com/priyankaseethamraju
+
+
+# Quick Start
+npm install  
+npm start                    #*starts the process*
+
 # Built With:
 React  
 [Bored API] (https://www.boredapi.com/)  
