@@ -11,3 +11,8 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  .images{
+    text-align: center;
+    padding:20px;
+    
+  }
