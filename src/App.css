@@ -1,3 +1,19 @@
 .App {
     text-align: center;
   }
+
+.link{
+  color: white;
+  font-weight: bold;
+}
+
+.link:active, .link:hover{
+  text-decoration: underline;
+  color: black;
+  padding: 10px 10px;
+}
+
+
+nav-p{
+  font-weight: bold;
+}
