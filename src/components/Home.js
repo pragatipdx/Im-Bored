@@ -1,10 +1,10 @@
 import React from "react";
+import Test from "./Test";
 
 function Home() {
     return (
       <div className="Home">
-          <h1>I'm bored main page</h1> 
-          <p>Add content here for main API page</p>
+        <Test />
       </div>
     );
   }

@@ -8,7 +8,7 @@ import './Nav.css';
 function Nav() {
   return (
     <Router>
-      <nav className="navbar navbar-dark bg-warning justify-content-between">
+      <nav className="navbar navbar-dark bg-primary justify-content-between">
           <p className="navbar-brand">I'm Bored</p>
           <div>
             <ul className="navbar">
