@@ -4,7 +4,7 @@ Built with the Bored API
 
 # Team Members 
 Pragati Rathore  https://github.com/pragatipdx  
-Reeya Kumbhojkar  
+Reeya Kumbhojkar https://github.com/reeya52
 Sai Priyanka  https://github.com/priyankaseethamraju
 
 
