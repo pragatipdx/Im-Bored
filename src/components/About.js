@@ -38,7 +38,7 @@ function About() {
                     <p>Computer Science Graduate student from PSU</p>
                     </div>
                 <div className="card-footer">
-                  <a href="https://www.linkedin.com/in/reeyakumbhojkar5/" className="card-link">My Linkedin Profile</a>
+                  <a href="https://www.linkedin.com/in/reeyakumbhojkar5/" className="card-link">Linkedin</a>
                 </div>
               </div>
             </div>
@@ -52,7 +52,7 @@ function About() {
                     <p>Computer Science Graduate student from PSU</p>
                 </div>
                 <div className="card-footer">
-                  <a href="https://www.linkedin.com/in/pragatirathore/" className="card-link">My Linkedin Profile</a>
+                  <a href="https://www.linkedin.com/in/pragatirathore/" className="card-link">Linkedin</a>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@ function About() {
                     <p>Computer Science Graduate student from PSU</p>
                 </div>
                 <div className="card-footer">
-                  <a href="https://www.linkedin.com/in/reeyakumbhojkar5/" className="card-link">My Linkedin Profile</a>
+                  <a href="https://www.linkedin.com/in/reeyakumbhojkar5/" className="card-link">Linkedin</a>
                 </div>
               </div>
             </div>
