@@ -1,10 +1,10 @@
 import React from "react";
+import GridUtil from "./GridUtil";
 
 function Home() {
     return (
       <div className="Home">
-          <h1>I'm bored main page</h1> 
-          <p>Add content here for main API page</p>
+        <GridUtil />
       </div>
     );
   }

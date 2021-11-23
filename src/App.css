@@ -17,3 +17,16 @@
 nav-p{
   font-weight: bold;
 }
+
+row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.aboutmain{
+  width: 45em;
+  height: 10em;
+  border-radius: 7px;
+}
