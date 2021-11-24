@@ -1,116 +1,94 @@
-import React , {ReactFragment} from 'react';
-import {useState,useEffect,useCallback} from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import React, { useEffect } from 'react';
+import {useState} from 'react';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListTile from '@material-ui/core/ImageListItem';
+import ImageListTileBar from '@material-ui/core/ImageListItemBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
  
 const GridUtil = () => {
+  let [state,setState] = useState('');
+  let source= null;
 
-
-  let education_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education'
-  let recreational_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=swimming'
-  let social_url='https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=friends'
-  let diy_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=jigsaw'
-  let charity_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=charity'
-  let cooking_url='https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=cooking'
-  let busywork_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=busy work'
-  let random_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=random'
-  let [state,setState] = useState('')
-  let url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education'
-  let source= null
-  const fetchData = ((url) =>{
-    fetch(url)
-   .then((response) =>  (response.json()))
-   .then((data) => {
-
+  const unsplash = () => {
+    let education_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education'
+    //let recreational_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=swimming'
+        
+    async function fetchImage() {
+      try{
+        let response = await fetch(education_url);
+        let data = await response.json();
+        console.log(data);
         data.results.forEach(item =>{
-        source = item.urls.thumb
-       
+          source = item.urls.thumb
         })    
-        setState(source)
-       console.log(state)
-    
-    
-      })
-  
-    .catch((error)=>{
-    console.error(error);
-})
-  })
+        setState(source);
+        console.log(state);
+      }
+      catch(error){
+        console.log(error);
+      }
+    }
 
+    fetchImage();
+  }
 
-  const renderImages = (()=>{
-return(
- <>
-  <img
-      
-  src={state}/>
-   <GridListTileBar
-     title='Education'
-     subtitle={<span>Activity Type</span>}
-     actionIcon={
-       <IconButton aria-label={`Best Place to learn`}>
-         <InfoIcon />
-       </IconButton>
-     }
-   />
-   </>
-)
-})
+  useEffect(() => {
+    unsplash();
+  });
+
   return (
     
     <div style={{margin: 'auto' }}>
-      <GridList cellHeight={180} >
-        <GridListTile key="Subheader" cols={2} rows={4} style={{ height: 'auto' }}>
+      <ImageList rowHeight={180}>
+        <ImageListTile key="Subheader" cols={2} rows={4} style={{ height: 'auto' }}>
           <ListSubheader component="div">I'm Bored</ListSubheader>
-        </GridListTile>
+        </ImageListTile>
     
-        <GridListTile>
-        <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+        <ImageListTile>
+          <img
+          src={state} alt="Educational"/>
+          <ImageListTileBar
+            title='Educational'
+            subtitle={<span>Activity Type</span>}
+            actionIcon={
+              <IconButton aria-label={`Best Place to learn`}>
+              <InfoIcon />
+              </IconButton>
+            }
+          />
+        </ImageListTile>
+        <ImageListTile>
+          <img
+          src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="Recreational"/>
+          <ImageListTileBar
             title='Recreational'
             subtitle={<span>Activity Type</span>}
             actionIcon={
               <IconButton aria-label={`Best Place to learn`}>
-                <InfoIcon />
+              <InfoIcon />
               </IconButton>
             }
-          />
-        </GridListTile>
-        <GridListTile>
-         <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
-            title='Recreational'
-            subtitle={<span>Activity Type</span>}
-            actionIcon={
-              <IconButton aria-label={`Best Place to learn`}>
-                <InfoIcon />
-              </IconButton>
-            }
-          />
-        </GridListTile>
-        <GridListTile>
-         <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+        />
+        </ImageListTile>
+        <ImageListTile>
+          <img
+          src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="Social"/>
+          <ImageListTileBar
             title='Social'   
             subtitle={<span>Activity Type</span>}
             actionIcon={
               <IconButton aria-label={`Best Place to learn`}>
-                <InfoIcon />
+              <InfoIcon />
               </IconButton>
             }
           />
-        </GridListTile>
-        <GridListTile>
-         <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+        </ImageListTile>
+        <ImageListTile>
+          <img
+          src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="DIY"/>
+          <ImageListTileBar
             title='DIY'
             subtitle={<span>Activity Type</span>}
             actionIcon={
@@ -119,11 +97,11 @@ return(
               </IconButton>
             }
           />
-        </GridListTile>
-        <GridListTile>
+        </ImageListTile>
+        <ImageListTile>
          <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="Charity"/>
+          <ImageListTileBar
             title='Charity'
             subtitle={<span>Activity Type</span>}
             actionIcon={
@@ -132,11 +110,11 @@ return(
               </IconButton>
             }
           />
-        </GridListTile>
-        <GridListTile>
+        </ImageListTile>
+        <ImageListTile>
          <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="Cooking"/>
+          <ImageListTileBar
             title='Cooking'
             subtitle={<span>Activity Type</span>}
             actionIcon={
@@ -145,11 +123,11 @@ return(
               </IconButton>
             }
           />
-        </GridListTile>
-        <GridListTile>
+        </ImageListTile>
+        <ImageListTile>
          <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="Busywork"/>
+          <ImageListTileBar
             title='busywork'
             subtitle={<span>Activity Type</span>}
             actionIcon={
@@ -158,11 +136,11 @@ return(
               </IconButton>
             }
           />
-        </GridListTile>
-        <GridListTile>
+        </ImageListTile>
+        <ImageListTile>
          <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
-          <GridListTileBar
+         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg" alt="random"/>
+          <ImageListTileBar
             title='random'
             subtitle={<span>Activity Type</span>}
             actionIcon={
@@ -171,9 +149,9 @@ return(
               </IconButton>
             }
           />
-        </GridListTile>
+        </ImageListTile>
 
-      </GridList>
+      </ImageList>
     </div>
   );
 }
