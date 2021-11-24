@@ -6,8 +6,14 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
+import { ImageListItemBar } from '@material-ui/core'
  
+
+let urls = new Array();
+let image_urls = new Array();
 const GridUtil = () => {
+
+ 
 
 
   let education_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education'
@@ -18,48 +24,34 @@ const GridUtil = () => {
   let cooking_url='https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=cooking'
   let busywork_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=busy work'
   let random_url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=random'
-  let [state,setState] = useState('')
-  let url = 'https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education'
-  let source= null
-  const fetchData = ((url) =>{
-    fetch(url)
-   .then((response) =>  (response.json()))
-   .then((data) => {
 
-        data.results.forEach(item =>{
-        source = item.urls.thumb
-       
-        })    
-        setState(source)
-       console.log(state)
-    
-    
-      })
+  let url = ''
+  let [state,setState] = useState([])
+  urls.push(education_url,recreational_url,social_url,diy_url,charity_url,cooking_url,busywork_url,random_url)
   
-    .catch((error)=>{
-    console.error(error);
-})
+  useEffect(()=>{
+  urls.forEach((item) => {
+    fetch(item)
+    .then((response) =>  (response.json()))
+    .then((data) => {
+ 
+         image_urls.push(data.results[0].urls.thumb) 
+
+
+       })
+   
+     .catch((error)=>{
+     console.error(error);
+ })
+ 
   })
-
-
-  const renderImages = (()=>{
-return(
- <>
-  <img
-      
-  src={state}/>
-   <GridListTileBar
-     title='Education'
-     subtitle={<span>Activity Type</span>}
-     actionIcon={
-       <IconButton aria-label={`Best Place to learn`}>
-         <InfoIcon />
-       </IconButton>
-     }
-   />
-   </>
-)
+  setState(image_urls)
+ 
+  
 })
+
+console.log('bcdj',image_urls)
+console.log(state)
   return (
     
     <div style={{margin: 'auto' }}>
@@ -67,10 +59,9 @@ return(
         <GridListTile key="Subheader" cols={2} rows={4} style={{ height: 'auto' }}>
           <ListSubheader component="div">I'm Bored</ListSubheader>
         </GridListTile>
-    
-        <GridListTile>
+         
         <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
+         src={state[0]}/>
           <GridListTileBar
             title='Recreational'
             subtitle={<span>Activity Type</span>}
@@ -80,10 +71,24 @@ return(
               </IconButton>
             }
           />
+        <GridListTile>
+          
+          <img
+         src={state[1]}/>
+          <GridListTileBar
+            title='Recreational'
+            subtitle={<span>Activity Type</span>}
+            actionIcon={
+              <IconButton aria-label={`Best Place to learn`}>
+                <InfoIcon />
+              </IconButton>
+            }
+          />
+         
         </GridListTile>
         <GridListTile>
          <img
-         src="http://www.circ.biz/wp-content/uploads/2014/12/1406-sands-jacksonhole-whitewater-1972-circ.jpg"/>
+         src={state[2]}/>
           <GridListTileBar
             title='Recreational'
             subtitle={<span>Activity Type</span>}
