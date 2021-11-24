@@ -62,11 +62,11 @@ function About() {
                   <img src={image3} id="image3" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
                 <div className="card-body">
-                  <h5>Priyanka Sithamraju</h5>
+                  <h5>Priyanka Seethamraju</h5>
                     <p>Computer Science Graduate student from PSU</p>
                 </div>
                 <div className="card-footer">
-                  <a href="https://www.linkedin.com/in/reeyakumbhojkar5/" className="card-link">Linkedin</a>
+                  <a href="https://www.linkedin.com/in/sai-priyanka-seethamraju-919532209/" className="card-link">Linkedin</a>
                 </div>
               </div>
             </div>
