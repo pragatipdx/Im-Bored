@@ -1,7 +1,7 @@
 import React from "react";
 import { useState} from "react";
 
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 
 import IconButton from "@material-ui/core/IconButton";
 import InfoIcon from "@material-ui/icons/Info";
@@ -24,8 +24,8 @@ const GenerateImages = (props) => {
 
   return (
     <>
-      <img src={state} />
-      <GridListTileBar
+      <img src={state} alt={title}/>
+      <ImageListItemBar
         title={title}
         subtitle={<span>Activity Type</span>}
         actionIcon={
