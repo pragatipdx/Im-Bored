@@ -20,7 +20,7 @@ function About() {
                 <div className="card-body">
                   <div className="aboutProj">
                     <p>
-                      I am Bored application is dashboard application to search for fun activities when you are bored.
+                      <b>I am Bored application is dashboard application to search for fun activities when you are bored.</b>
                     </p>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ function About() {
           </div>
           <div className="row">
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card " style={{height: "28em"}}>
+              <div className="max-auto card " style={{height: "25em"}}>
                 <div className="card-img">
                   <img src={Reeya_image} id="image1" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
@@ -43,7 +43,7 @@ function About() {
               </div>
             </div>
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card" style={{height: "28em"}}>
+              <div className="max-auto card" style={{height: "25em"}}>
                 <div className="card-img">
                   <img src={image2} id="image2" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
@@ -57,7 +57,7 @@ function About() {
               </div>
             </div>
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card" style={{height: "28em"}}>
+              <div className="max-auto card" style={{height: "25em"}}>
                 <div className="card-img">
                   <img src={image3} id="image3" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
