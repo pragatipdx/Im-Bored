@@ -1,11 +1,10 @@
 import React from "react";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import GenerateImages from "./GenerateImages";
 
 let urls = new Array();
-let image_urls = new Array();
 const GridUtil = () => {
   let education_url =
     "https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=education";
@@ -37,40 +36,40 @@ const GridUtil = () => {
 
   return (
     <div style={{ margin: "auto" }}>
-      <GridList cellHeight={180}>
-        <GridListTile
+      <ImageList height={180}>
+        <ImageListItem
           key="Subheader"
           cols={2}
           rows={4}
           style={{ height: "auto" }}
         >
           <ListSubheader component="div">I'm Bored</ListSubheader>
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={education_url} title={"Education"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={recreational_url} title={"Recreation"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={social_url} title={"Social"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={diy_url} title={"DIY"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={charity_url} title={"Charity"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={cooking_url} title={"Cooking"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={busywork_url} title={"Busy Work"} />
-        </GridListTile>
-        <GridListTile>
+        </ImageListItem>
+        <ImageListItem>
           <GenerateImages url={random_url} title={"Random"} />
-        </GridListTile>
-      </GridList>
+        </ImageListItem>
+      </ImageList>
     </div>
   );
 };
