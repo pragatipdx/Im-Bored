@@ -2,14 +2,24 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
+import Test from "./Test";
 import './Nav.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 function Nav() {
   return (
     <Router>
-      <nav className="navbar navbar-dark bg-primary justify-content-between">
-          <p className="navbar-brand">I'm Bored</p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+      <img
+        src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png"
+        height="12"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+          {/* <p className="navbar-brand">I'm Bored</p> */}
           <div>
             <ul className="navbar">
             <li className="nav-link">
@@ -31,7 +41,7 @@ function Nav() {
           <About />
         </Route>
         <Route path="/">
-          <Home />
+          <Test />
         </Route>
         <Route path="/home">
           <Home />
