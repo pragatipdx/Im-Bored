@@ -18,15 +18,43 @@ nav-p{
   font-weight: bold;
 }
 
+.About{
+  background-image:url(./Images/background.jpg);
+}
+
+.border{
+  background-color: rgb(245, 243, 243);
+}
+
 row{
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .aboutmain{
-  width: 45em;
-  height: 10em;
+  width: 50em;
+  height: 7em;
   border-radius: 7px;
+}
+
+.aboutProj{
+  background-color:rgb(245, 243, 243);
+  height: 3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .aboutmain{
+    width: 30em;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .aboutmain{
+    width: 25em;
+    text-align: left;
+  }
+  .aboutProj{
+    height: 4rem;
+  }
 }
