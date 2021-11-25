@@ -105,7 +105,7 @@ const GridUtil = () => {
           />
         </ImageListItem>
         <ImageListItem>
-          <GenerateImages url={charity_url} title={"Charity"} />
+          <GenerateImages url={charity_url} />
           <ImageListItemBar
             title="Charity"
             subtitle={<span>Activity Type</span>}
@@ -117,7 +117,7 @@ const GridUtil = () => {
           />
         </ImageListItem>
         <ImageListItem>
-          <GenerateImages url={cooking_url} title={"Cooking"} />
+          <GenerateImages url={cooking_url} />
           <ImageListItemBar
             title="Cooking"
             subtitle={<span>Activity Type</span>}
@@ -141,7 +141,7 @@ const GridUtil = () => {
           />
         </ImageListItem>
         <ImageListItem>
-          <GenerateImages url={random_url} title={"Random"} />
+          <GenerateImages url={random_url} />
           <ImageListItemBar
             title="Random"
             subtitle={<span>Activity Type</span>}
