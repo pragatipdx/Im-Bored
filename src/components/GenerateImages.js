@@ -1,14 +1,9 @@
 import React from "react";
 import { useState} from "react";
 
-import ImageListItemBar from "@material-ui/core/ImageListItemBar";
-
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
-
 
 const GenerateImages = (props) => {
-  let { url, title } = props;
+  let { url} = props;
 
   let [state, setState] = useState([]);
 
@@ -24,16 +19,7 @@ const GenerateImages = (props) => {
 
   return (
     <>
-      <img src={state} alt={title}/>
-      <ImageListItemBar
-        title={title}
-        subtitle={<span>Activity Type</span>}
-        actionIcon={
-          <IconButton aria-label={`Best Place to learn`}>
-            <InfoIcon />
-          </IconButton>
-        }
-      />
+      <img src={state} alt="ActivityImage"/>
     </>
   );
 };
