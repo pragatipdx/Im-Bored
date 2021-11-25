@@ -4,7 +4,7 @@ import GridUtil from "./GridUtil";
 function Home() {
     return (
       <div className="Home">
-        <GridUtil />
+        <FrontPage />
       </div>
     );
   }
