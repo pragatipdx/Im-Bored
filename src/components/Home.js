@@ -5,7 +5,7 @@ import FrontPage from "./FrontPage"
 function Home() {
   return (
     <div className="Home">
-      <FrontPage />
+      <GridUtil />
     </div>
   );
 }
