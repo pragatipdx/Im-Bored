@@ -19,7 +19,7 @@ const GenerateImages = (props) => {
 
   return (
     <>
-      <img src={state} alt="ActivityImage"/>
+      <img src={state} height="200" width="100%"  alt="ActivityImage"/>
     </>
   );
 };
