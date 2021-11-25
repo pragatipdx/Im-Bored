@@ -47,7 +47,7 @@ const GridUtil = () => {
 
   return (
     <div style={{ margin: "auto" }}>
-      <ImageList height={180}>
+      <ImageList height={200}>
         <ImageListItem
           key="Subheader"
           cols={2}
