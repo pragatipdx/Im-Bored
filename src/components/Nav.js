@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import './Nav.css';
+import MainPage from "./MainPage"
+import FrontPage from "./FrontPage"
+
+
 
 
 function Nav() {
@@ -22,11 +26,25 @@ function Nav() {
                   About US
                 </Link>
               </li>
+              <li className="nav-link">
+                <Link className="link" to="/main">
+                  Front
+                </Link>
+              </li>
+              <li className="nav-link">
+                <Link className="link" to="/gallery">
+                  Gallery
+                </Link>
+              </li>
+
             </ul>
           </div>    
         </nav>
            
       <Switch>
+      <Route path="/main">
+          <MainPage />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
@@ -36,6 +54,9 @@ function Nav() {
         <Route path="/home">
           <Home />
         </Route>
+        <Route path="/gallery">
+          <FrontPage />
+          </Route>      
       </Switch>
     </Router>
   );
