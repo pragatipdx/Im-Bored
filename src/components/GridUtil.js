@@ -1,11 +1,11 @@
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import ImageList from "@material-ui/core/ImageList";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import GenerateImages from "./GenerateImages";
 import ImageListItem from "@material-ui/core/ImageListItem";
 import SchoolIcon from "@material-ui/icons/School";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
- import IconButton from "@material-ui/core/IconButton";
+import IconButton from "@material-ui/core/IconButton";
  
  import CreateIcon from "@material-ui/icons/Create";
  import PublicIcon from "@material-ui/icons/Public";
@@ -15,8 +15,23 @@ import ImageListItemBar from "@material-ui/core/ImageListItemBar";
  import PlaceIcon from '@material-ui/icons/Place';
  import MusicIcon from '@material-ui/icons/MusicNote';
 
- import BusinessIcon from '@material-ui/icons/Business';
-import { State, useState } from "react";
+import { useState } from "react";
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import Modal from '@material-ui/core/Modal';
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 const GridUtil = () => {
   let education_url =
@@ -36,21 +51,34 @@ const GridUtil = () => {
   let music_url =
     "https://api.unsplash.com/search/photos?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=music";
 
-  let [activity, setActivity] = useState([]);
+    let [activity, setActivity] = useState([]);
+    let [state, setState] = useState([]);
 
-  const fetchActivity = (activity) => {
-    setActivity(activity);
 
-    fetch(`http://www.boredapi.com/api/activity?type=${activity}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => {
+      setOpen(false);
+      setState('');
+    }
 
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+
+
+    const BoredData = (props) => {
+      setActivity(props);
+
+  
+      fetch(`http://www.boredapi.com/api/activity?type=${activity}`)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setState(data.activity);
+        })
+  
+        .catch((error) => {
+          console.error(error);
+        });
+    }
 
   return (
     <div style={{ margin: "auto" }}>
@@ -64,46 +92,76 @@ const GridUtil = () => {
           <ListSubheader component="div">I'm Bored</ListSubheader>
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("education");
-          }}
         >
           <GenerateImages url={education_url} />
           <ImageListItemBar
              title="Education"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Learn something interesting!</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("education");
+                  handleOpen();}}
+                >
                  <SchoolIcon />
                </IconButton>
              }
            />
+           <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("recreational");
-          }}
         >
           <GenerateImages url={recreational_url}  />
           <ImageListItemBar
              title="Recreation"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Would you like to have fun?</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                BoredData("recreational");
+                handleOpen();}}
+               >
                  <CreateIcon />
                </IconButton>
              }
            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("social");
-          }}
         >
           <GenerateImages url={social_url}/>
           <ImageListItemBar
              title="Social"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Social activities are great!</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <PublicIcon />
@@ -112,15 +170,12 @@ const GridUtil = () => {
            />
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("diy");
-          }}
         >
           <GenerateImages url={diy_url} />
           
            <ImageListItemBar
              title="DIY"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Do it yourself.</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <BrushIcon />
@@ -129,14 +184,11 @@ const GridUtil = () => {
            />
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("charity");
-          }}
         >
           <GenerateImages url={charity_url} />
           <ImageListItemBar
              title="Charity"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>There's always more to give</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <HealingIcon />
@@ -145,14 +197,11 @@ const GridUtil = () => {
            />
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("cooking");
-          }}
         >
           <GenerateImages url={cooking_url} />
           <ImageListItemBar
              title="Cooking"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Let's mess around in kitchen</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <RestaurantIcon />
@@ -161,14 +210,11 @@ const GridUtil = () => {
            />
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("busywork");
-          }}
         >
           <GenerateImages url={relaxation_url}  />
           <ImageListItemBar
              title="Relaxation"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Stressed? Just chill</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <PlaceIcon />
@@ -177,14 +223,11 @@ const GridUtil = () => {
            />
         </ImageListItem>
         <ImageListItem
-          onClick={() => {
-            fetchActivity("music");
-          }}
         >
           <GenerateImages url={music_url} />
           <ImageListItemBar
              title="Music"
-             subtitle={<span>Activity Type</span>}
+             subtitle={<span>Get your volume up!</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}>
                  <MusicIcon />

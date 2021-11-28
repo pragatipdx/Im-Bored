@@ -11,7 +11,7 @@ const GenerateImages = (props) => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      setState(data.results[0].urls.thumb);
+      setState(data.results[0].urls.raw);
     })
 
     .catch((error) => {
