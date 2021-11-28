@@ -7,13 +7,13 @@ import image3 from '../Images/image3.jpg';
 function About() {
     return (
       <div className="About">
-          <br/>
+          {/* <br/>
           <h2 className="text-center abouthead">
             <span className="border rounded p-2">
               <b>About us</b>
             </span>
           </h2>
-          <br/>
+          <br/> */}
           <div className="row p">
             <div className="col-md-4 col-lg-4 col-sm-12">
               <div className="d-flex justify-content-center aboutmain">
