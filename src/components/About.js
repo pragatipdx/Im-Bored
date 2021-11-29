@@ -7,20 +7,13 @@ import image3 from '../Images/image3.jpg';
 function About() {
     return (
       <div className="About">
-          {/* <br/>
-          <h2 className="text-center abouthead">
-            <span className="border rounded p-2">
-              <b>About us</b>
-            </span>
-          </h2>
-          <br/> */}
           <div className="row p">
             <div className="col-md-4 col-lg-4 col-sm-12">
               <div className="d-flex justify-content-center aboutmain">
                 <div className="card-body">
                   <div className="aboutProj">
                     <p>
-                      <b>I am Bored application is dashboard application to search for fun activities when you are bored.</b>
+                      <b>CONTRIBUTORS</b>                  
                     </p>
                   </div>
                 </div>

@@ -4,36 +4,39 @@ import Home from "./Home";
 import About from "./About";
 import './Nav.css';
 import MainPage from "./MainPage"
-import FrontPage from "./FrontPage"
-
+import Gallery from "./Gallery"
+import HomeIcon from '@material-ui/icons/Home';
 
 
 
 function Nav() {
   return (
     <Router>
-      <nav className="navbar navbar-dark bg-primary justify-content-between">
-          <p className="navbar-brand">I'm Bored</p>
-          <div>
+      <nav className="navbar navbar-dark bg-dark justify-content-between" style={{paddingTop:"0",paddingBottom:"0", marginBottom:"0"}}>
+          <div className="navbar-brand">
+           I'M BORED
+           </div>
+           
+           <div>
             <ul className="navbar">
             <li className="nav-link">
                 <Link className="link" to="/home">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link className="link" to="/about">
-                  About US
+                  <HomeIcon />
                 </Link>
               </li>
               <li className="nav-link">
                 <Link className="link" to="/main">
-                  Front
+                  Explore
                 </Link>
               </li>
               <li className="nav-link">
                 <Link className="link" to="/gallery">
                   Gallery
+                </Link>
+              </li>
+              <li className="nav-link">
+                <Link className="link" to="/about">
+                  About US
                 </Link>
               </li>
 
@@ -43,19 +46,19 @@ function Nav() {
            
       <Switch>
       <Route path="/main">
-          <MainPage />
+          <Home />
         </Route>
         <Route path="/about">
           <About />
         </Route>
         <Route path="/">
-          <Home />
+          <MainPage />
         </Route>
         <Route path="/home">
-          <Home />
+          <MainPage />
         </Route>
         <Route path="/gallery">
-          <FrontPage />
+          <Gallery />
           </Route>      
       </Switch>
     </Router>

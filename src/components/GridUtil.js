@@ -92,7 +92,6 @@ const GridUtil = () => {
           rows={4}
           style={{ height: "auto" }}
         >
-          <ListSubheader component="div">I'm Bored</ListSubheader>
         </ImageListItem>
         <ImageListItem
           onClick={() => {
