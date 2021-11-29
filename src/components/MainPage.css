@@ -7,7 +7,7 @@
 }
 
 
-.Main {
+.main {
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
@@ -16,7 +16,7 @@
   overflow-x: hidden; 
   text-decoration: none;
   box-sizing: border-box;
-  
+  background-color: black;
 } 
 
 h2 {
@@ -42,7 +42,7 @@ h2 strong {
   background-position: center;
   background-size: cover;
    position: relative;
-   height: 90vh;   
+   height: 100vh;   
 }
 
 .split {

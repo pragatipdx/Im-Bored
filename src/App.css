@@ -14,12 +14,14 @@
   padding: 10px 10px;
 }
 
+
 nav-p {
   font-weight: bold;
+  height: 0%;
 }
 
 .About {
-  background-image: url(./Images/background.jpg);
+  background-color: black;
 }
 
 .border {
@@ -40,6 +42,8 @@ row {
 .aboutProj {
   background-color: rgb(245, 243, 243);
   height: 3rem;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 700px) {

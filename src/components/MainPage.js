@@ -20,8 +20,10 @@ export default function MainPage() {
         </div>
     
         <div className="credit">Credits: 
-            <a href="https://unsplash.com/@nhillier"> Bored API </a> and <a
-                href="https://unsplash.com/">Unsplash API</a>
+            <a href="https://www.boredapi.com/"> Bored API </a> , <a
+                href="https://unsplash.com/">Unsplash API</a> and 
+           <a href="http://www.voicerss.org/"> VOICERRS API </a> 
+
             
         </div>
         </div>
