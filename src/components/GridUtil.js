@@ -6,6 +6,7 @@ import ImageListItem from "@material-ui/core/ImageListItem";
 import SchoolIcon from "@material-ui/icons/School";
 import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import IconButton from "@material-ui/core/IconButton";
+
  
  import CreateIcon from "@material-ui/icons/Create";
  import PublicIcon from "@material-ui/icons/Public";
@@ -19,8 +20,9 @@ import { useState } from "react";
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
+import { DEFAULTS } from "./AppEnum";
 
-
+const apiKey = '160c39babf6b409bb825cf8f50da5409';
 const style = {
   position: 'absolute',
   top: '50%',
@@ -62,7 +64,7 @@ const GridUtil = () => {
       setState('');
     }
 
-
+    const [speech, setSpeech] = useState(DEFAULTS.SPEECH);
 
     const BoredData = (props) => {
       setActivity(props);
@@ -80,6 +82,13 @@ const GridUtil = () => {
         });
     }
 
+    
+    const handleClick = (props) => {
+      const audioSrc = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${activity}&r=0`
+      setActivity(props);   
+      setSpeech(audioSrc);
+    }
+
   return (
     <div style={{ margin: "auto" }}>
       <ImageList height={200}>
@@ -91,7 +100,9 @@ const GridUtil = () => {
         >
           <ListSubheader component="div">I'm Bored</ListSubheader>
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem   onClick={() => {
+                handleClick("education");
+                }} 
         >
           <GenerateImages url={education_url} />
           <ImageListItemBar
@@ -99,10 +110,15 @@ const GridUtil = () => {
              subtitle={<span>Learn something interesting!</span>}
              actionIcon={
                <IconButton aria-label={`Best Place to learn`}
-                onClick={() => {
+                onClick={() => {  
                   BoredData("education");
-                  handleOpen();}}
+                  handleOpen();              
+                }}
+                             
                 >
+                <>
+                { speech && <audio autoPlay src={speech}></audio> }
+                </>       
                  <SchoolIcon />
                </IconButton>
              }
@@ -124,7 +140,9 @@ const GridUtil = () => {
             </Modal>
 
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Recreation");
+                }} 
         >
           <GenerateImages url={recreational_url}  />
           <ImageListItemBar
@@ -156,7 +174,9 @@ const GridUtil = () => {
               </Box>
             </Modal>
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Social");
+                }} 
         >
           <GenerateImages url={social_url}/>
           <ImageListItemBar
@@ -169,7 +189,9 @@ const GridUtil = () => {
              }
            />
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("DIY");
+                }} 
         >
           <GenerateImages url={diy_url} />
           
@@ -183,7 +205,9 @@ const GridUtil = () => {
              }
            />
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Charity");
+                }} 
         >
           <GenerateImages url={charity_url} />
           <ImageListItemBar
@@ -196,7 +220,9 @@ const GridUtil = () => {
              }
            />
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Cooking");
+                }} 
         >
           <GenerateImages url={cooking_url} />
           <ImageListItemBar
@@ -209,7 +235,9 @@ const GridUtil = () => {
              }
            />
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Relaxation");
+                }} 
         >
           <GenerateImages url={relaxation_url}  />
           <ImageListItemBar
@@ -222,7 +250,9 @@ const GridUtil = () => {
              }
            />
         </ImageListItem>
-        <ImageListItem
+        <ImageListItem onClick={() => {
+                handleClick("Music");
+                }} 
         >
           <GenerateImages url={music_url} />
           <ImageListItemBar
