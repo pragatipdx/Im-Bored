@@ -56,6 +56,9 @@ const GridUtil = () => {
     let [activity, setActivity] = useState([]);
     let [state, setState] = useState([]);
 
+    let [Text, setText] = useState([]);
+    const [speech, setSpeech] = useState(DEFAULTS.SPEECH);
+   
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -64,7 +67,7 @@ const GridUtil = () => {
       setState('');
     }
 
-    const [speech, setSpeech] = useState(DEFAULTS.SPEECH);
+    
 
     const BoredData = (props) => {
       setActivity(props);
@@ -83,14 +86,19 @@ const GridUtil = () => {
     }
 
     
+
     const handleClick = (props) => {
-      const audioSrc = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${activity}&r=0`
-      setActivity(props);   
+      const audioSrc = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${Text}&r=0`
+      setText(props);   
       setSpeech(audioSrc);
     }
 
   return (
+     
     <div style={{ margin: "auto" }}>
+        <>
+    { speech && <audio autoPlay src={speech}></audio> }
+    </> 
       <ImageList height={200}>
         <ImageListItem
           key="Subheader"
@@ -98,7 +106,6 @@ const GridUtil = () => {
           rows={4}
           style={{ height: "auto" }}
         >
-          <ListSubheader component="div">I'm Bored</ListSubheader>
         </ImageListItem>
         <ImageListItem   onClick={() => {
                 handleClick("education");
@@ -115,10 +122,7 @@ const GridUtil = () => {
                   handleOpen();              
                 }}
                              
-                >
-                <>
-                { speech && <audio autoPlay src={speech}></audio> }
-                </>       
+                >   
                  <SchoolIcon />
                </IconButton>
              }
