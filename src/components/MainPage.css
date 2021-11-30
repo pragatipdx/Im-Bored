@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;800&display=swap");
 
 :root {
   --hover-width: 99%;
   --other-width: 1%;
-  --font-family: "Work Sans", sans-serif
+  --font-family: "Work Sans", sans-serif;
 }
-
 
 .main {
   padding: 0;
@@ -13,17 +12,17 @@
   font-family: var(--font-family);
   width: 100%;
   height: 100%;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   text-decoration: none;
   box-sizing: border-box;
   background-color: black;
-} 
+}
 
 h2 {
   text-transform: uppercase;
   font-size: 4rem;
   font-weight: normal;
-  color: black; 
+  color: black;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -33,7 +32,7 @@ h2 {
 }
 
 h2 strong {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .container {
@@ -41,8 +40,8 @@ h2 strong {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-   position: relative;
-   height: 100vh;   
+  position: relative;
+  height: 100vh;
 }
 
 .split {
@@ -72,9 +71,9 @@ h2 strong {
 .split.left,
 .split.right {
   transition: 1000ms all ease-in-out;
-} 
+}
 
- .split.left *,
+.split.left *,
 .split.right * {
   opacity: 0;
   transition: 1000ms all ease-out;

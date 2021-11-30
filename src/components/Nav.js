@@ -2,66 +2,50 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import './Nav.css';
-import MainPage from "./MainPage"
-import Gallery from "./Gallery"
-import HomeIcon from '@material-ui/icons/Home';
+import "./Nav.css";
+import MainPage from "./MainPage";
 
-
+import HomeIcon from "@material-ui/icons/Home";
+import GridUtil from "./GridUtil";
+import FrontPage from "./FrontPage";
+import App from "../App";
 
 function Nav() {
   return (
-    <Router>
-      <nav className="navbar navbar-dark bg-dark justify-content-between" style={{paddingTop:"0",paddingBottom:"0", marginBottom:"0"}}>
-          <div className="navbar-brand">
-           I'M BORED
-           </div>
-           
-           <div>
-            <ul className="navbar">
-            <li className="nav-link">
-                <Link className="link" to="/home">
-                  <HomeIcon />
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link className="link" to="/main">
-                  Explore
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link className="link" to="/gallery">
-                  Gallery
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link className="link" to="/about">
-                  About US
-                </Link>
-              </li>
+    <nav id="header">
+      <div class="logo">Xplore</div>
 
-            </ul>
-          </div>    
-        </nav>
-           
-      <Switch>
-      <Route path="/main">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
-          <MainPage />
-        </Route>
-        <Route path="/home">
-          <MainPage />
-        </Route>
-        <Route path="/gallery">
-          <Gallery />
-          </Route>      
-      </Switch>
-    </Router>
+      <ul>
+        <Link to="/">
+          <li>
+            <a href="" data-after="Home">
+              Home
+            </a>
+          </li>
+        </Link>
+        <Link to="/activities">
+          <li>
+            <a href="/activites" data-after="Activities">
+              Activities
+            </a>
+          </li>
+        </Link>
+        <Link to="/frontpage">
+          <li>
+            <a href="" data-after="Gallery">
+              Gallery
+            </a>
+          </li>
+        </Link>
+        <Link to="/about">
+          <li>
+            <a href="" data-after="About Us">
+              About Us
+            </a>
+          </li>
+        </Link>
+      </ul>
+    </nav>
   );
 }
 

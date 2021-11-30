@@ -18,6 +18,7 @@ import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import { DEFAULTS } from "./GridEnum";
+import Results from "./Results";
 
 const apiKey = "160c39babf6b409bb825cf8f50da5409";
 const style = {
@@ -62,20 +63,22 @@ const GridUtil = () => {
 
   const [speech, setSpeech] = useState(DEFAULTS.SPEECH);
 
-  const BoredData = (props) => {
-    setActivity(props);
+  let [output,setOutput] = useState('')
+  const fetchActivity=((activity)=>{
 
     fetch(`http://www.boredapi.com/api/activity?type=${activity}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setState(data.activity);
-      })
+    .then((response) => response.json())
+    .then((data) => {
+        setOutput(data)
+       
+    })
 
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+    .catch((error) => {
+      console.error(error);
+    });
+
+    
+  })
 
   const handleClick = (props) => {
     const audioSrc = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${activity}&r=0`;
@@ -84,7 +87,21 @@ const GridUtil = () => {
   };
 
   return (
-    <div style={{ margin: "auto" }}>
+    <>
+    {/* <nav id ='header'>
+    <div class="logo">Xplore</div>
+                  
+                    <ul>
+                        <li><a href = "" data-after="Home">Home</a></li>
+                        <li><a href = "./GridUtil.js" data-after="Activities">Activities</a></li>
+                        <li><a href = "./FrontPage.js" data-after="Gallery">Gallery</a></li>
+                        <li><a href = "./About.js" data-after="About Us">About Us</a></li>
+
+   </ul>
+   </nav>     */}
+    <div style={{ margin: "auto" }} class= 'image-list'>
+    {output && ( <Results display={output}/>)}
+      {!output && (
       <ImageList height={200}>
         <ImageListItem
           key="Subheader"
@@ -96,44 +113,30 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("education");
+            fetchActivity('education')
           }}
         >
           <GenerateImages url={education_url} />
           <ImageListItemBar
+           
             title="Education"
             subtitle={<span>Learn something interesting!</span>}
             actionIcon={
               <IconButton
                 aria-label={`Best Place to learn`}
-                onClick={() => {
-                  BoredData("education");
-                  handleOpen();
-                }}
+                
               >
                 <>{speech && <audio autoPlay src={speech}></audio>}</>
                 <SchoolIcon />
               </IconButton>
             }
           />
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Your suggested activity is -
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {state}
-              </Typography>
-            </Box>
-          </Modal>
+
         </ImageListItem>
         <ImageListItem
           onClick={() => {
             handleClick("Recreation");
+            fetchActivity('recreational')
           }}
         >
           <GenerateImages url={recreational_url} />
@@ -143,34 +146,19 @@ const GridUtil = () => {
             actionIcon={
               <IconButton
                 aria-label={`Best Place to learn`}
-                onClick={() => {
-                  BoredData("recreational");
-                  handleOpen();
-                }}
+             
               >
                 <CreateIcon />
               </IconButton>
             }
           />
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Your suggested activity is -
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {state}
-              </Typography>
-            </Box>
-          </Modal>
+  
         </ImageListItem>
         <ImageListItem
           onClick={() => {
             handleClick("Social");
+            fetchActivity('social')
+
           }}
         >
           <GenerateImages url={social_url} />
@@ -187,6 +175,8 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("DIY");
+            fetchActivity('diy');
+
           }}
         >
           <GenerateImages url={diy_url} />
@@ -204,6 +194,8 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("Charity");
+            fetchActivity('charity');
+
           }}
         >
           <GenerateImages url={charity_url} />
@@ -220,6 +212,8 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("Cooking");
+            fetchActivity('cooking');
+
           }}
         >
           <GenerateImages url={cooking_url} />
@@ -236,6 +230,7 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("Relaxation");
+            fetchActivity('relaxation');
           }}
         >
           <GenerateImages url={relaxation_url} />
@@ -252,6 +247,7 @@ const GridUtil = () => {
         <ImageListItem
           onClick={() => {
             handleClick("Music");
+            fetchActivity('music');
           }}
         >
           <GenerateImages url={music_url} />
@@ -265,8 +261,9 @@ const GridUtil = () => {
             }
           />
         </ImageListItem>
-      </ImageList>
+      </ImageList>)}
     </div>
+    </>
   );
 };
 

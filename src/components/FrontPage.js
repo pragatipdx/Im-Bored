@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-export default function Home() {
+export default function FrontPage() {
   let url =
     "https://api.unsplash.com/photos/random?client_id=XVkqfP4oGQXxceYU3rJi2GIwtaAHPhCwosw1PdjOv7I&query=gardening,swimming,card game,dance,write a poem,jigsaw puzzle,roller skate,cooking,photos with friends,watch a movie,picnic&count=10";
   let [state, setState] = useState([]);
