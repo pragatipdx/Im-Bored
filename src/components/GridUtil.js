@@ -177,98 +177,212 @@ const GridUtil = () => {
               </Typography>
               </Box>
             </Modal>
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+          </ImageListItem>
+          <ImageListItem onClick={() => {
                 handleClick("Social");
                 }} 
-        >
-          <GenerateImages url={social_url}/>
-          <ImageListItemBar
+          >
+            <GenerateImages url={social_url}/>
+            <ImageListItemBar
              title="Social"
              subtitle={<span>Social activities are great!</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("social");
+                  handleOpen();}}
+               >
                  <PublicIcon />
                </IconButton>
              }
-           />
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+            </ImageListItem>
+            <ImageListItem onClick={() => {
                 handleClick("DIY");
                 }} 
-        >
+            >
           <GenerateImages url={diy_url} />
           
            <ImageListItemBar
              title="DIY"
              subtitle={<span>Do it yourself.</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("diy");
+                  handleOpen();}}
+               >
                  <BrushIcon />
                </IconButton>
              }
            />
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+           <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+          </ImageListItem>
+          <ImageListItem onClick={() => {
                 handleClick("Charity");
                 }} 
-        >
-          <GenerateImages url={charity_url} />
-          <ImageListItemBar
+          >
+            <GenerateImages url={charity_url} />
+            <ImageListItemBar
              title="Charity"
              subtitle={<span>There's always more to give</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("charity");
+                  handleOpen();}}
+               >
                  <HealingIcon />
                </IconButton>
              }
-           />
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+          </ImageListItem>
+          <ImageListItem onClick={() => {
                 handleClick("Cooking");
                 }} 
-        >
-          <GenerateImages url={cooking_url} />
-          <ImageListItemBar
+          >
+            <GenerateImages url={cooking_url} />
+            <ImageListItemBar
              title="Cooking"
              subtitle={<span>Let's mess around in kitchen</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("cooking");
+                  handleOpen();}}
+               >
                  <RestaurantIcon />
                </IconButton>
              }
-           />
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+          </ImageListItem>
+          <ImageListItem onClick={() => {
                 handleClick("Relaxation");
                 }} 
-        >
-          <GenerateImages url={relaxation_url}  />
-          <ImageListItemBar
+          >
+            <GenerateImages url={relaxation_url}  />
+            <ImageListItemBar
              title="Relaxation"
              subtitle={<span>Stressed? Just chill</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("relaxation");
+                  handleOpen();}}
+               >
                  <PlaceIcon />
                </IconButton>
              }
-           />
-        </ImageListItem>
-        <ImageListItem onClick={() => {
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+          </ImageListItem>
+          <ImageListItem onClick={() => {
                 handleClick("Music");
                 }} 
-        >
-          <GenerateImages url={music_url} />
-          <ImageListItemBar
+          >
+            <GenerateImages url={music_url} />
+            <ImageListItemBar
              title="Music"
              subtitle={<span>Get your volume up!</span>}
              actionIcon={
-               <IconButton aria-label={`Best Place to learn`}>
+               <IconButton aria-label={`Best Place to learn`}
+                onClick={() => {
+                  BoredData("music");
+                  handleOpen();}}
+               >
                  <MusicIcon />
                </IconButton>
              }
-           />
-        </ImageListItem>
+            />
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Your suggested activity is -
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                {state}
+              </Typography>
+              </Box>
+            </Modal>
+          </ImageListItem>
       </ImageList>
     </div>
   );
