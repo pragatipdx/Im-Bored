@@ -23,7 +23,7 @@ nav-p {
   background-color: black;
   margin-top: 60px;
   margin-right: 7px;
-  margin-left: 20px;
+  margin-left: 28px;
 }
 
 .border {
@@ -48,7 +48,7 @@ row {
   background-position: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 770px) {
   .aboutmain {
     width: 30em;
     text-align: left;
@@ -132,7 +132,6 @@ row {
   grid-column-end: 6;
 }
 .image {
-  /* margin-top:-200px; */
   padding: 0 0px 10px 2px;
   width: 100%;
 }
@@ -182,12 +181,10 @@ h1 {
   z-index: 1000;
   left: 0;
   top: 0;
-  width: 96.5vw;
+  width: 97.7vw;
 
   margin-left: 28px;
-  /* margin-right: 60px; */
-  /* margin-top:20px; */
-  height: auto;
+  height: 60px;
   box-sizing: border-box;
 
   background: rgba(0, 0, 0, 0.6);
@@ -226,6 +223,7 @@ nav ul li a:hover {
   text-decoration: none;
   list-style: none;
 }
+
 .image-list {
   margin: 20px;
   width: 97vw;

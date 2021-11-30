@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import Reeya_image from '../Images/Reeya_image.jpg';
-import image2 from '../Images/image2.png';
-import image3 from '../Images/image3.jpg';
+import Reeya_image from '../Images/reeya_image.jpg';
+import Pragati_image from '../Images/pragati_image.jpg';
+import Priyanka_image from '../Images/priyanka_image.JPG';
 
 function About() {
     return (
@@ -11,18 +11,16 @@ function About() {
             <div className="col-md-4 col-lg-4 col-sm-12">
               <div className="d-flex justify-content-center aboutmain">
                 <div className="card-body">
-                  <div className="aboutProj">
-                    <p>
-                      <b>CONTRIBUTORS</b>                  
-                    </p>
-                  </div>
+                  <p>
+                    <b style={{color: "white"}}>CONTRIBUTORS</b>                  
+                  </p>
                 </div>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card " style={{height: "25em"}}>
+              <div className="max-auto card " style={{height: "30em"}}>
                 <div className="card-img">
                   <img src={Reeya_image} id="image1" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
@@ -36,9 +34,9 @@ function About() {
               </div>
             </div>
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card" style={{height: "25em"}}>
+              <div className="max-auto card" style={{height: "30em"}}>
                 <div className="card-img">
-                  <img src={image2} id="image2" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
+                  <img src={Pragati_image} id="image2" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
                 <div className="card-body">
                   <h4>Pragati Rathore</h4>
@@ -50,9 +48,9 @@ function About() {
               </div>
             </div>
             <div className="col-md-4 col-lg-4 col-sm-12">
-              <div className="max-auto card" style={{height: "25em"}}>
+              <div className="max-auto card" style={{height: "30em"}}>
                 <div className="card-img">
-                  <img src={image3} id="image3" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
+                  <img src={Priyanka_image} id="image3" className="img-fluid" alt="Profilepicture" style={{height: "15em"}} />
                 </div>
                 <div className="card-body">
                   <h5>Priyanka Seethamraju</h5>
