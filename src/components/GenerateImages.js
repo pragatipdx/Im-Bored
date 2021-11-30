@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 
-
-
 const GenerateImages = (props) => {
   let { url } = props;
 
@@ -21,7 +19,6 @@ const GenerateImages = (props) => {
   return (
     <>
       <img src={state} height="200" width="100%" alt="ActivityImage" />
-  
     </>
   );
 };

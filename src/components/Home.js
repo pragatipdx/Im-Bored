@@ -1,11 +1,12 @@
 import React from "react";
 import GridUtil from "./GridUtil";
-import FrontPage from "./FrontPage"
+import MainPage from "./MainPage";
+import FrontPage from "./FrontPage";
 
 function Home() {
   return (
     <div className="Home">
-      <GridUtil />
+      <MainPage />
     </div>
   );
 }

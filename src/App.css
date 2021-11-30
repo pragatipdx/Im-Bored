@@ -9,17 +9,21 @@
 
 .link:active,
 .link:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: black;
   padding: 10px 10px;
 }
 
 nav-p {
   font-weight: bold;
+  height: 0%;
 }
 
 .About {
-  background-image: url(./Images/background.jpg);
+  background-color: black;
+  margin-top: 60px;
+  margin-right: 7px;
+  margin-left: 20px;
 }
 
 .border {
@@ -40,6 +44,8 @@ row {
 .aboutProj {
   background-color: rgb(245, 243, 243);
   height: 3rem;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width: 700px) {
@@ -124,4 +130,117 @@ row {
   grid-row-end: 4;
   grid-column-start: 5;
   grid-column-end: 6;
+}
+.image {
+  /* margin-top:-200px; */
+  padding: 0 0px 10px 2px;
+  width: 100%;
+}
+.output {
+  display: flex;
+  flex-direction: column;
+}
+.display-data {
+  height: 60%;
+}
+.content {
+  justify-content: left;
+  margin-top: -290px;
+  background-color: white;
+  width: 60%;
+  height: 30%;
+  padding: 20px;
+}
+h1 {
+  color: cadetblue;
+}
+
+.back {
+  display: inline-block;
+  padding: 10px 30px;
+  color: cadetblue;
+  background-color: transparent;
+  border: 2px solid cadetblue;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: 0.3s ease background-color;
+  transition-property: background-color, color;
+}
+.back:hover {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: cadetblue;
+}
+.MuiListSubheader-gutters {
+  display: none;
+}
+#header {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 96.5vw;
+
+  margin-left: 28px;
+  /* margin-right: 60px; */
+  /* margin-top:20px; */
+  height: auto;
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: #fff;
+}
+nav .logo {
+  padding: 12px 20px;
+  height: 80px;
+  float: left;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: cadetblue;
+}
+nav ul {
+  list-style: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-decoration: none;
+}
+nav ul li a {
+  line-height: 80px;
+  color: cadetblue;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+nav ul li a:hover {
+  background: cadetblue;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  list-style: none;
+}
+.image-list {
+  margin: 20px;
+  width: 97vw;
+  padding-top: 78px;
+  padding-left: 8px;
+  padding-right: 0px;
+  margin-right: 0;
+  margin-top: 60px;
+  margin-left: 8px;
+}
+.grid-container {
+  padding-top: 78px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-right: 40px;
+  margin-top: 60px;
+  margin-left: 8px;
 }
