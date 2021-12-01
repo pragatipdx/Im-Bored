@@ -12,10 +12,12 @@ import App from "../App";
 
 function Nav() {
   return (
+    <>
     <nav id="header">
       <div class="logo">Xplore</div>
-
-      <ul>
+  
+      <div >  
+      <ul class='navbar-links'>
         <Link to="/">
           <li>
             <a href="" data-after="Home">
@@ -45,7 +47,17 @@ function Nav() {
           </li>
         </Link>
       </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+
+        </div>
+      </div>
+    
     </nav>
+    <script src="ResponsiveNav.js"></script>
+    </>
   );
 }
 
