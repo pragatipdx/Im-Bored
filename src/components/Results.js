@@ -27,7 +27,7 @@ const Results = (props) => {
 
   return (
     <div class="display-data">
-      <nav id="header">
+      <nav class='header2'>
         <div class="logo">Xplore</div>
 
         <ul>

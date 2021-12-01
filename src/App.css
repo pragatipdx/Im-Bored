@@ -182,9 +182,8 @@ h1 {
   z-index: 1000;
   left: 0;
   top: 0;
-  width: 96.5vw;
-
-  margin-left: 28px;
+  width: 100vw;
+  margin-left: 0px;
   /* margin-right: 60px; */
   /* margin-top:20px; */
   height: auto;
@@ -227,14 +226,14 @@ nav ul li a:hover {
   list-style: none;
 }
 .image-list {
-  margin: 20px;
-  width: 97vw;
+  /* margin: 20px; */
+  width: 100vw;
   padding-top: 78px;
-  padding-left: 8px;
+  /* padding-left: 8px; */
   padding-right: 0px;
   margin-right: 0;
   margin-top: 60px;
-  margin-left: 8px;
+  /* margin-left: 8px; */
 }
 .grid-container {
   padding-top: 78px;
@@ -242,5 +241,21 @@ nav ul li a:hover {
   padding-right: 40px;
   margin-right: 40px;
   margin-top: 60px;
-  margin-left: 8px;
+  margin-left: 78px;
+  
+}
+.header2{
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  margin-left: 0px;
+  /* margin-right: 60px; */
+  /* margin-top:20px; */
+  height: auto;
+  box-sizing: border-box;
+
+  background: none;
+  border-bottom: #fff;
 }
