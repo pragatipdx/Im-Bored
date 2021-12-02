@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Frontend-final-project/static/css/main.9ed678ae.chunk.css",
-    "main.js": "/Frontend-final-project/static/js/main.683a1afc.chunk.js",
-    "main.js.map": "/Frontend-final-project/static/js/main.683a1afc.chunk.js.map",
+    "main.css": "/Frontend-final-project/static/css/main.b625d03d.chunk.css",
+    "main.js": "/Frontend-final-project/static/js/main.3f88cdb6.chunk.js",
+    "main.js.map": "/Frontend-final-project/static/js/main.3f88cdb6.chunk.js.map",
     "runtime-main.js": "/Frontend-final-project/static/js/runtime-main.706fc1c2.js",
     "runtime-main.js.map": "/Frontend-final-project/static/js/runtime-main.706fc1c2.js.map",
     "static/css/2.fc4ad356.chunk.css": "/Frontend-final-project/static/css/2.fc4ad356.chunk.css",
-    "static/js/2.19cca5a6.chunk.js": "/Frontend-final-project/static/js/2.19cca5a6.chunk.js",
-    "static/js/2.19cca5a6.chunk.js.map": "/Frontend-final-project/static/js/2.19cca5a6.chunk.js.map",
+    "static/js/2.78647dbe.chunk.js": "/Frontend-final-project/static/js/2.78647dbe.chunk.js",
+    "static/js/2.78647dbe.chunk.js.map": "/Frontend-final-project/static/js/2.78647dbe.chunk.js.map",
     "index.html": "/Frontend-final-project/index.html",
     "static/css/2.fc4ad356.chunk.css.map": "/Frontend-final-project/static/css/2.fc4ad356.chunk.css.map",
-    "static/css/main.9ed678ae.chunk.css.map": "/Frontend-final-project/static/css/main.9ed678ae.chunk.css.map",
-    "static/js/2.19cca5a6.chunk.js.LICENSE.txt": "/Frontend-final-project/static/js/2.19cca5a6.chunk.js.LICENSE.txt",
+    "static/css/main.b625d03d.chunk.css.map": "/Frontend-final-project/static/css/main.b625d03d.chunk.css.map",
+    "static/js/2.78647dbe.chunk.js.LICENSE.txt": "/Frontend-final-project/static/js/2.78647dbe.chunk.js.LICENSE.txt",
     "static/media/MainPage.css": "/Frontend-final-project/static/media/imageBW.41480ff4.jpg",
     "static/media/pragati_image.b9809388.jpg": "/Frontend-final-project/static/media/pragati_image.b9809388.jpg",
     "static/media/priyanka_image.cc5543e1.JPG": "/Frontend-final-project/static/media/priyanka_image.cc5543e1.JPG",
@@ -20,8 +20,8 @@
   "entrypoints": [
     "static/js/runtime-main.706fc1c2.js",
     "static/css/2.fc4ad356.chunk.css",
-    "static/js/2.19cca5a6.chunk.js",
-    "static/css/main.9ed678ae.chunk.css",
-    "static/js/main.683a1afc.chunk.js"
+    "static/js/2.78647dbe.chunk.js",
+    "static/css/main.b625d03d.chunk.css",
+    "static/js/main.3f88cdb6.chunk.js"
   ]
 }
