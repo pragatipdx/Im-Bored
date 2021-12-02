@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import Reeya_image from '../Images/reeya_image.jpg';
+import Reeya_image from '../Images/Reeya_image.jpg';
 import Pragati_image from '../Images/pragati_image.jpg';
 import Priyanka_image from '../Images/priyanka_image.JPG';
 
