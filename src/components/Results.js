@@ -68,7 +68,7 @@ const Results = (props) => {
                     <a href="{display.link}">{display.link}</a>{" "}
                   </p>
                 )}
-                <a href="/activities" class="back">
+                <a onClick={activityPage} class="back">
                   Search Another Activity
                 </a>
               </div>
