@@ -15,7 +15,8 @@ npm start                    #*starts the process*
 # Built With:
 React  
 [Bored API] (https://www.boredapi.com/)  
-[Unsplash API] (https://unsplash.com/documentation)
+[Unsplash API] (https://unsplash.com/documentation).    
+[Voice Rss API] (http://www.voicerss.org/api/)
 
 # Usage
 User can select any of the following categories and receive a random activity that pertains to the selected category.
