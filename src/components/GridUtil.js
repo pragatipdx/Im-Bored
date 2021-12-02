@@ -65,7 +65,7 @@ const GridUtil = () => {
 
   let [output, setOutput] = useState("");
   const fetchActivity = (activity) => {
-    fetch(`http://www.boredapi.com/api/activity?type=${activity}`)
+    fetch(`https://www.boredapi.com/api/activity?type=${activity}`)
       .then((response) => response.json())
       .then((data) => {
         setOutput(data);
@@ -77,7 +77,7 @@ const GridUtil = () => {
   };
 
   const handleClick = (props) => {
-    const audioSrc = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${activity}&r=0`;
+    const audioSrc = `https://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${activity}&r=0`;
     setActivity(props);
     setSpeech(audioSrc);
   };
