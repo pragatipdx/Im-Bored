@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../components/MainPage.css";
-import GridUtil from "./GridUtil";
 
 export default function MainPage() {
   const [className, setclassName] = useState("container");
