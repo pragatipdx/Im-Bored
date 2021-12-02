@@ -23,12 +23,12 @@ export default function MainPage() {
             onMouseLeave={() => setclassName("container")}
           >
             <h2>
-              We have come to <strong>Help</strong>
+              We'll <strong>help you!</strong>
             </h2>
           </div>
         </div>
 
-        <div className="credit">
+        <div className="sources">
           Credits:
           <a href="https://www.boredapi.com/"> Bored API </a> ,{" "}
           <a href="https://unsplash.com/">Unsplash API</a> and

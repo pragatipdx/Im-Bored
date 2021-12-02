@@ -15,14 +15,14 @@
   overflow-x: hidden;
   text-decoration: none;
   box-sizing: border-box;
-  background-color: black;
+  /* background-color: black; */
 }
 
 h2 {
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 8rem;
   font-weight: normal;
-  color: black;
+  color: rgba(0, 0, 0, 0.9);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -32,7 +32,7 @@ h2 {
 }
 
 h2 strong {
-  font-weight: 800;
+  font-weight: 200;
 }
 
 .container {
@@ -108,13 +108,13 @@ h2 strong {
   }
 }
 
-.credit {
+.sources {
   position: absolute;
   bottom: 20px;
   right: 50%;
   background: rgba(255, 255, 255, 0.4);
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  color: black;
+  color: rgba(0, 0, 0, 0.9);
   padding: 0.5rem 1rem;
 }
