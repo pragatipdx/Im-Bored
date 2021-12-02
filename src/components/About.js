@@ -12,7 +12,7 @@ function About() {
               <div className="d-flex justify-content-center aboutmain">
                 <div className="card-body">
                   <p>
-                    <b style={{color: "white"}}>CONTRIBUTORS</b>                  
+                    <b class = 'about-background'>CONTRIBUTORS</b>                  
                   </p>
                 </div>
               </div>
